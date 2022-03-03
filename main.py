@@ -11,7 +11,6 @@ from classes.Funcionarios import Atendente, Entregador
 from classes.Item import Item
 from classes.Produto import Produto
 
-
 endereco1 = Endereco("Rua das flores", "16","Bairro das larangeiras", "07787-003", "Sousa", "PB")
 endereco2 = Endereco("Rua Fagundes Lopes", "sem numero", "Bairro das larangeiras", "07787-003", "Sousa", "PB")
 cliente = Cliente(218376, "Josefina", "12/02/1970", endereco1)
@@ -40,5 +39,5 @@ compras = Compra(1, 150.00, lista_produtos)
 contrato1 = Contrato(1, '12/09/2021', '12/09/2022', 1200.00, '08/00', '17/00')
 contrato2 = Contrato(1, '12/09/2021', '12/09/2023', 1500.00, '08/00', '17/00')
 
-atendente = Atendente(1, "Jose de Sousa", "123.456.789-01", endereco1, "Trans neutre a   binarie", contrato1)
+atendente = Atendente(1, "Jose de Sousa", "123.456.789-01", endereco1, "M", contrato1)
 entregador = Entregador(2, "Felippe Rian", "012-345-678-90", endereco2, "M", contrato2)

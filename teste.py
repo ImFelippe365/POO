@@ -1,19 +1,21 @@
-from ctypes import alignment
 from tkinter import *
 
 
 class Main:
 
-    def __init__(self, window=None):
-        janela.title("Periquita da Juliana Bonde")
-        janela.geometry('1000x1000')
+    def __init__(self, window):
+
+        janela.title("Título da janela")
+        janela.geometry('1000x500')
+
         self.container = Frame(window)
         self.container.pack()
-        self.containerText = Label(
-            self.container, text="Quem vai querer, a minha periquita")
+
+        self.containerText = Label(self.container, text="Texto do container")
         self.containerText.pack()
+
         self.containerButton = Button(
-            self.container, text="Dar a periquita", background='red')
+            self.container, text="Clique aqui", background='green')
         self.containerButton.pack()
 
 
