@@ -1,23 +1,20 @@
 class Compra:
 
-    def __init__(self, id, metodoPagamento, valor_total = 0 ,lista_itens=[]):
+    def __init__(self, id, metodoPagamento, valor_total=0, lista_itens=[]):
         self.__id = id
         self.__valor_total = valor_total
         self.__metodoPagamento = metodoPagamento
         self.__lista_itens = []
 
     def __str__(self):
-
-        def itens(item):
-            return item
-        return "Lista dos itens na compra: \n\n {} \n\nValor total: {}\n\n Metodo de Pagamento: {}".format(*self.__lista_itens, self.__valor_total, self.__metodoPagamento)
+        return "\n---------------------------------\n➔ Valor total: {}\n➔ Metodo de Pagamento: {} \n\n➔ Lista dos itens na compra: {}\n---------------------------------".format(self.__valor_total, self.__metodoPagamento, " ".join(map(str, self.__lista_itens)))
 
     def adicionar_item_na_lista(self, item):
         if item.get_quantidade() <= item.get_produto().get_quantidade_estoque():
             self.__lista_itens.append(item)
             item.get_produto().set_quantidade_estoque(
                 item.get_produto().get_quantidade_estoque() - item.get_quantidade())
-            self.__valor_total += item.get_produto.
+            self.__valor_total += item.get_produto().get_preco() * item.get_quantidade()
         else:
             print("Quantidade insuficiente no estoque!")
 

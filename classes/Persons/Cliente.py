@@ -7,6 +7,8 @@ class Cliente:
         self.__nome = nome
         self.__data_nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y').date()
         self.__endereco = endereco
+    def __str__(self):
+        return "\nID do cliente: {} \nNome do cliente: {} \nData de Nascimento: {} \nEndereco: {}".format(self.__id, self.__nome, self.__data_nascimento, self.__endereco)
 
     # GETS
     def get_id(self):
@@ -16,7 +18,7 @@ class Cliente:
     def get_data_nascimento(self):
         return self.__data_nascimento
     def get_endereco(self):
-        return self.__edereco
+        return self.__endereco
 
     # SETS
     def set_id(self, id):

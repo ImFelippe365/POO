@@ -5,7 +5,7 @@ class Item:
         self.__quantidade = quantidade
 
     def __str__(self):
-        return "{} \nQuantidade: {}".format(self.__produto,self.__quantidade) 
+        return f"\n{self.__produto}  ↪ Quantidade: {self.__quantidade}"
 
     # GETS
     def get_produto(self):

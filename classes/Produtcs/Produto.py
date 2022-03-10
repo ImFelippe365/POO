@@ -8,7 +8,7 @@ class Produto:
         self.__quantidade_estoque = quantidade_estoque
 
     def __str__(self):
-        return (f"Produto: {self.__nome} \nPreço: {self.__preco}\nData de validade: {self.__data_validade}\nData de fabricação: {self.__data_fabricacao}\nQuantidade disponível no estoque: {self.__quantidade_estoque}")
+        return (f"\n  ↪ Produto: {self.__nome}\n  ↪ Preço: {self.__preco}\n  ↪ Data de validade: {self.__data_validade}\n  ↪ Data de fabricação: {self.__data_fabricacao}\n  ↪ Quantidade disponível no estoque: {self.__quantidade_estoque}\n")
 
     # GETS
     def get_id(self):
