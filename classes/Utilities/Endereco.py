@@ -7,7 +7,8 @@ class Endereco:
         self.__cep = cep
         self.__cidade = cidade
         self.__estado = estado
-
+    def __str__(self):
+        return "Rua: {} \nNúmero: {} \nBairro: {} \nCEP: {} \nCidade: {} \nEstado: {}".format(self.__rua, self.__numero, self.__bairro, self.__cep, self.__cidade, self.__estado)
     # GETS
     def get_rua(self):
         return self.__rua

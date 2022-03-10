@@ -4,6 +4,9 @@ class Item:
         self.__produto = produto
         self.__quantidade = quantidade
 
+    def __str__(self):
+        return "{} \nQuantidade: {}".format(self.__produto,self.__quantidade) 
+
     # GETS
     def get_produto(self):
         return self.__produto

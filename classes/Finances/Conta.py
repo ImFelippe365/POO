@@ -1,13 +1,15 @@
 from datetime import datetime
 
-
 class Conta:
 
-    def __init__(self, titular, valor_a_pagar, data_ultimo_pagamento, data_ultima_compra):
+    def __init__(self, titular, valor_a_pagar):
         self.__titular = titular
         self.__valor_a_pagar = valor_a_pagar
-        self.__data_ultimo_pagamento = datetime.strptime(data_ultimo_pagamento, '%d/%m/%Y').date()
-        self.__data_ultima_compra = datetime.strptime(data_ultima_compra, '%d/%m/%Y').date()
+        self.__data_ultimo_pagamento = "Cliente não fez nenhum pagamento"
+        self.__data_ultima_compra = "Cliente não fez nenhuma compra"
+    
+    def __str__(self):
+        return "Titular: {} \nValor a pagar: {} \nData de ultimo pagamento: {} \nData de ultima compra: {}".format(self.__titular, self.__valor_a_pagar, self.__data_ultimo_pagamento, self.__data_ultima_compra)
 
     # GETS
     def get_titular(self):

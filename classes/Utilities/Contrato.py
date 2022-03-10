@@ -36,6 +36,3 @@ class Contrato:
         self.__horario_entrada = horario_entrada
     def set_horario_saida(self, horario_saida):
         self.__horario_saida = horario_saida
-        
-    def reajustarSalario(self, novoSalario):
-        self.__salario = novoSalario

@@ -1,20 +1,25 @@
 from datetime import datetime
 from mimetypes import init
 
-from classes.Cliente import Cliente
-from classes.Compra import Compra
-from classes.Conta import Conta
-from classes.Contrato import Contrato
-from classes.Endereco import Endereco
-from classes.Estoque import Estoque
-from classes.Funcionarios import Atendente, Entregador
-from classes.Item import Item
-from classes.Produto import Produto
+from classes.Persons.Cliente import Cliente
+from classes.Finances.Compra import Compra
+from classes.Finances.Conta import Conta
+from classes.Utilities.Contrato import Contrato
+from classes.Utilities.Endereco import Endereco
+from classes.Produtcs.Estoque import Estoque
+from classes.Persons.Funcionarios import Atendente, Entregador
+from classes.Produtcs.Item import Item
+from classes.Produtcs.Produto import Produto
 
-endereco1 = Endereco("Rua das flores", "16","Bairro das larangeiras", "07787-003", "Sousa", "PB")
-endereco2 = Endereco("Rua Fagundes Lopes", "sem numero", "Bairro das larangeiras", "07787-003", "Sousa", "PB")
+
+# mande pix pfv
+
+endereco1 = Endereco("Rua das flores", "16",
+                     "Bairro das larangeiras", "07787-003", "Sousa", "PB")
+endereco2 = Endereco("Rua Fagundes Lopes", "sem numero",
+                     "Bairro das larangeiras", "07787-003", "Sousa", "PB")
 cliente = Cliente(218376, "Josefina", "12/02/1970", endereco1)
-conta = Conta(cliente, 120, "17/12/2021", "13/04/2022")
+conta = Conta(cliente, 120)
 
 produto1 = Produto(1, 'arroz', 2.50, '15/09/2024', '12/09/2022', 50)
 produto2 = Produto(2, "Leite 1L", 5, "16/09/2022", "16/07/2022", 20)
@@ -32,12 +37,37 @@ item6 = Item(produto6, 1)
 
 estoque = Estoque()
 estoque.adicionarNovoProduto(produto1)
+print(estoque)
+estoque.adicionarNovoProduto(produto2)
+estoque.adicionarNovoProduto(produto3)
+estoque.adicionarNovoProduto(produto4)
+estoque.adicionarNovoProduto(produto5)
+estoque.adicionarNovoProduto(produto6)
+print(estoque)
 
-lista_produtos = [item1, item2, item3, item4, item5, item6]
-compras = Compra(1, 150.00, lista_produtos)
+estoque.reabastecerEstoque(produto2,)
 
-contrato1 = Contrato(1, '12/09/2021', '12/09/2022', 1200.00, '08/00', '17/00')
-contrato2 = Contrato(1, '12/09/2021', '12/09/2023', 1500.00, '08/00', '17/00')
+compra1=Compra(1, 150.00, "add_na_conta")
 
-atendente = Atendente(1, "Jose de Sousa", "123.456.789-01", endereco1, "M", contrato1)
-entregador = Entregador(2, "Felippe Rian", "012-345-678-90", endereco2, "M", contrato2)
+contrato1=Contrato(1, '12/09/2021', '12/09/2022', 1200.00, '08/00', '17/00')
+contrato2=Contrato(1, '12/09/2021', '12/09/2023', 1500.00, '08/00', '17/00')
+
+atendente=Atendente(1, "Jose de Sousa", "123.456.789-01",
+                    endereco1, "M", contrato1)
+entregador=Entregador(2, "Felippe Rian", "012-345-678-90",
+                      endereco2, "M", contrato2)
+
+compra1.adicionar_item_na_lista(item2)
+compra1.adicionar_item_na_lista(item4)
+compra1.adicionar_item_na_lista(item1)
+print(compra1)
+compra1.remover_item_da_lista(item1)
+print(compra1)
+
+print(conta)
+atendente.registrarCompra(compra1, conta)
+print(conta)
+
+atendente.pagar_conta(conta, 20)
+
+entregador.iniciar_entrega(endereco1, compra1, 14)

@@ -27,15 +27,3 @@ class Cliente:
         self.__data_nascimento = data_nascimento
     def set_endereco(self, endereco):
         self.__endereco = endereco
-
-    def realizar_compra(self, compra, atendente):
-        atendente.registrarCompra(compra, self.__conta)
-        print("Compra realizada! Obrigado pela preferencia.")
-    
-    def pagar_valor(self, valor):
-        if valor <= self.__conta.get__valor_a_pagar():
-            self.__conta.set__valor_a_pagar(self.__conta.get__valor_a_pagar() - valor)
-            print("Pagamento realizado")
-        else: 
-            self.__conta.set__valor_a_pagar(0)
-            print("Conta paga! Troco de R$" + valor - self.__conta.get__valor_a_pagar())
