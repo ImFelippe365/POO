@@ -22,6 +22,7 @@ class Compra:
         self.__lista_itens.remove(item)
         item.get_produto().set_quantidade_estoque(
             item.get_produto().get_quantidade_estoque() + item.get_quantidade())
+        self.__valor_total -= item.get_produto().get_preco() * item.get_quantidade()
 
     # GETS
     def get_id(self):

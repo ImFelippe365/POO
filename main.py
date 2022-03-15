@@ -47,17 +47,13 @@ print(estoque)
 estoque.reabastecerEstoque(produto2,13)
 print(estoque)
 
-
-
 compra1=Compra(1, "add_na_conta")
 
 contrato1=Contrato(1, '12/09/2021', '12/09/2022', 1200.00, '08/00', '17/00')
 contrato2=Contrato(1, '12/09/2021', '12/09/2023', 1500.00, '08/00', '17/00')
 
-atendente=Atendente(1, "Jose de Sousa", "123.456.789-01",
-                    endereco1, "M", contrato1)
-entregador=Entregador(2, "Felippe Rian", "012-345-678-90",
-                      endereco2, "M", contrato2)
+atendente=Atendente(1, "Jose de Sousa", "123.456.789-01", endereco1, "M", contrato1)
+entregador=Entregador(2, "Felippe Rian", "012-345-678-90", endereco2, "M", contrato2)
 
 print("----------------------------COMPRA TESTE----------------------------\n")
 compra1.adicionar_item_na_lista(item2)

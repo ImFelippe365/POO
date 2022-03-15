@@ -7,7 +7,8 @@ class Estoque:
 
     def adicionarNovoProduto(self, produto):
         self.__produtos.append(produto)
-
+    def get_produtos(self):
+        return self.__produtos
     def reabastecerEstoque(self, produto, quantidade):
         for i in range(len(self.__produtos)):
             if(produto == self.__produtos[i]):
