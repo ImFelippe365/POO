@@ -1,17 +1,21 @@
 from datetime import datetime
-
+'''Classe criada para o cliente deixar sua compra em debito para depois pagar'''
 class Conta:
 
+    """Metodo costrutor: criando os atributos da classe e inicializando os mesmos, titular recebe uma instancia
+    se cliente, data do ultimo pagamento e da ultima compra sao atualizadas quando a compra é realizada pelo
+    atendente"""
     def __init__(self, titular, valor_a_pagar):
         self.__titular = titular
         self.__valor_a_pagar = valor_a_pagar
         self.__data_ultimo_pagamento = "Cliente não fez nenhum pagamento"
         self.__data_ultima_compra = "Cliente não fez nenhuma compra"
-    
+
+    '''Metodo para faciitar e organizar exibição dos dados da classe '''
     def __str__(self):
         return "Titular: {} \nValor a pagar: {} \nData de ultimo pagamento: {} \nData de ultima compra: {}".format(self.__titular, self.__valor_a_pagar, self.__data_ultimo_pagamento, self.__data_ultima_compra)
 
-    # GETS
+    """"Gets e sets, para pegar os valores dos atributos ou altera-los, caso seja necessario"""
     def get_titular(self):
         return self.__titular
 
@@ -24,7 +28,6 @@ class Conta:
     def get_data_ultima_compra(self):
         return self.__data_ultima_compra
 
-    # SETS
     def set_titular(self, nova_titular):
         self.__titular = nova_titular
 

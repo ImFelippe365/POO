@@ -1,13 +1,17 @@
 class Compra:
 
+    """Metodo costrutor: criando os atributos da classe, atributo lista de itens recebe instancias de classe Item 
+    o valor total da compra sempre inicia zerada e cresce conforme os itens são adicionados"""
     def __init__(self, id, metodoPagamento, valor_total=0, lista_itens=[]):
         self.__id = id
         self.__valor_total = valor_total
         self.__metodoPagamento = metodoPagamento
         self.__lista_itens = []
 
+    """Metodo para faciitar e organizar exibição dos dados da classe"""
     def __str__(self):
         return "\n---------------------------------\n➔ Valor total: {}\n➔ Metodo de Pagamento: {} \n\n➔ Lista dos itens na compra: {}\n---------------------------------".format(self.__valor_total, self.__metodoPagamento, " ".join(map(str, self.__lista_itens)))
+
 
     def adicionar_item_na_lista(self, item):
         if item.get_quantidade() <= item.get_produto().get_quantidade_estoque():
@@ -24,6 +28,7 @@ class Compra:
             item.get_produto().get_quantidade_estoque() + item.get_quantidade())
         self.__valor_total -= item.get_produto().get_preco() * item.get_quantidade()
 
+    """"Gets e sets, para caso o uso seja necessario"""
     # GETS
     def get_id(self):
         return self.__id
