@@ -8,7 +8,7 @@ class Cliente:
         self.__nome = nome
         self.__data_nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y').date()
         self.__endereco = endereco
-        self.__lista_clientes = lista_clientes
+        
 
     """Metodo para facilitar e organizar exibição dos dados"""
     def __str__(self):

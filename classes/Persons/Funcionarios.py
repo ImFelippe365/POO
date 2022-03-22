@@ -78,13 +78,13 @@ class Atendente(Funcionario):
     def __init__(self, id, nome, cpf, endereco, sexo, contrato):
         """aributos herdados"""
         Funcionario.__init__(self, id, nome, cpf, endereco, sexo, contrato)
+        self.__contrato = contrato
         self.__compras_realizadas = {}
 
     """Metodo reescrito"""
 
     def calculo_previdencia_social(self):
-        print(
-            f"Imposto a ser pago com base no seu salário: R$ {7.5*self.__contrato.get_salario()/100}")
+        print(f"Imposto a ser pago com base no seu salário: R$ {7.5*self.__contrato.get_salario()/100}\n")
 
     def comprovante_de_pagamento(self):
         caracteres = (34-len(" Lista de produtos "))*"="

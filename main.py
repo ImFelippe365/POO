@@ -44,6 +44,7 @@ entregador = Entregador(
 
 escolha = int(input(
     "Escolhas: \n1 - Sou Atendente \n2 - Sou Entregador \n3 - Encerrar programa\n\nInforme a opção desejada: "))
+os.system('cls' if os.name == 'nt' else 'clear')
 lista_clientes = []
 if __name__ == "__main__":
 
@@ -53,11 +54,10 @@ if __name__ == "__main__":
 
             escolha_atendente = int(input(
                 "Oque deseja fazer? \n\n1 - Calcular previdencia Social \n2 - Pagamento de debito \n3 - Registrar Compra \n4 - Adicionar produto no estoque \n5 - Reabastecer produto no estoque \n6 - Remover produto do estoque \n7 - Cadastrar cliente \n8 - Listar clientes \n9 - Trocar Usuario \n0 - Sair do sistema \n\nEscolha: "))
-
+            os.system('cls' if os.name == 'nt' else 'clear')
             if(escolha_atendente == 1):
                 print("\nCalculando previdencia...")
                 atendente.calculo_previdencia_social()
-
             elif(escolha_atendente == 2):
                 cliente = input("\nA conta de qual cliente sera paga? ")
                 valor = float(input("Quanto ele pretende pagar? "))
@@ -65,23 +65,21 @@ if __name__ == "__main__":
 
             elif(escolha_atendente == 3):
 
-                cliente = int(
-                    input("\nInforme o ID do cliente que esta realizando a compra: "))
+                cliente = input("\nInforme o ID do cliente que esta realizando a compra: ")
                 for x in lista_clientes:
-                    if x.get_id() == cliente:
+                    if x == cliente:
                         metodo = input(
                             "\nQual vai ser o metodo de pagamento da compra? \n\nadd_na_conta\nEspecie\netc...\n\nInforme:")
                         compra = Compra(uuid.uuid4(), metodo)
                         print("\nSelecionando itens da compra...\n")
                         while True:
-                            print(estoque + "\n")
+                            print(estoque, "\n")
                             print(compra)
                             escolha_compra = int(input(
                                 "\nAdicionar item na lista (1)\nRemover item da lista(2)\nFinalizar seleção de produtos(3)\n\nSelecione: "))
 
                             if escolha_compra == 1:
-                                nome_produto = int(
-                                    input("\nDigite o nome do produto: "))
+                                nome_produto = input("\nDigite o nome do produto: ")
                                 quantidade = int(
                                     input("\nDigite a quantidade: "))
                                 instancia = estoque.get_instancia(nome_produto)
@@ -151,20 +149,19 @@ if __name__ == "__main__":
                                     cep_cliente, cidade_cliente, estado_cliente)
                 cliente = Cliente(uuid.uuid4(), nome_cliente,
                                   data_nascimento_cliente, endereco)
-                lista_clientes.append(cliente)
-                id_cliente += 1
+                lista_clientes.append(nome_cliente)
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("Cliente cadastrado com sucesso!")
                 
 
             elif(escolha_atendente == 8):
                 for i in range(len(lista_clientes)):
-                    print(lista_clientes[i]+"\n")
+                    print(lista_clientes[i],"\n")
 
             elif(escolha_atendente == 9):
                 escolha = 2
                 break
 
-            elif(escolha_atendente == 10):
+            elif(escolha_atendente == 0):
                 print("Desligando...")
                 break

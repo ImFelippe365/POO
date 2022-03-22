@@ -16,7 +16,7 @@ class Produto:
     """Metodo para facilitar e organizar exibição dos dados"""
 
     def __str__(self):
-        return (f"\n  ↪ Produto: {self.__nome}\n  ↪ Preço: {self.__preco}\n  ↪ Data de validade: {self.__data_validade}\n  ↪ Data de fabricação: {self.__data_fabricacao}\n  ↪ Quantidade disponível no estoque: {self.__quantidade_estoque}\n")
+        return (f"\n  ↪ Produto: {self.__nome}\n  ↪ Id: {self.__id}\n  ↪ Preço: {self.__preco}\n  ↪ Data de validade: {self.__data_validade}\n  ↪ Data de fabricação: {self.__data_fabricacao}\n  ↪ Quantidade disponível no estoque: {self.__quantidade_estoque}\n")
 
     """"Gets e sets, para caso o uso seja necessario"""
 
