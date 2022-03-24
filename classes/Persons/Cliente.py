@@ -1,5 +1,5 @@
 from datetime import datetime
-'''Classe criada para '''
+'''Classe criada para trazer um cliente real para o codigo, com id, nome, data de nascimento e um endereco correspondente'''
 class Cliente:
     """Metodo costrutor: criando os atributos da classe e inicializando os mesmos, endereço recebe uma instancia de Endereco
     data de nascimento recebe uma string, mas a converte para o formato datetime"""
@@ -8,7 +8,6 @@ class Cliente:
         self.__nome = nome
         self.__data_nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y').date()
         self.__endereco = endereco
-        
 
     """Metodo para facilitar e organizar exibição dos dados"""
     def __str__(self):
@@ -34,7 +33,7 @@ class Cliente:
         self.__nome = nome
 
     def set_data_nascimento(self, data_nascimento):
-        self.__data_nascimento = data_nascimento
+        self.__data_nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y').date()
 
     def set_endereco(self, endereco):
         self.__endereco = endereco

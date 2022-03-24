@@ -1,4 +1,5 @@
 from datetime import datetime
+'''Classe criada para instanciar os contratos dos funcionarios'''
 class Contrato:
     """Metodo costrutor: criando os atributos da classe e inicializando os mesmos"""
     def __init__(self, id, data_inicio, data_fim, salario, horario_entrada, horario_saida,carga_horaria):

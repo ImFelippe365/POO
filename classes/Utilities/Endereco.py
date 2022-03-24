@@ -1,3 +1,4 @@
+'''Classe criada para instanciar os endereços dos clientes, para uma possivel entrega de compras'''
 class Endereco:
     """Metodo costrutor: criando os atributos da classe e inicializando os mesmos, dados de localização"""
     def __init__(self, rua, numero, bairro, cep, cidade, estado):

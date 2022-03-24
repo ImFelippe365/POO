@@ -5,9 +5,9 @@ class Conta:
     """Metodo costrutor: criando os atributos da classe e inicializando os mesmos, titular recebe uma instancia
     se cliente, data do ultimo pagamento e da ultima compra sao atualizadas quando a compra é realizada pelo
     atendente"""
-    def __init__(self, titular, valor_a_pagar):
+    def __init__(self, titular):
         self.__titular = titular
-        self.__valor_a_pagar = valor_a_pagar
+        self.__valor_a_pagar = 0
         self.__data_ultimo_pagamento = "Cliente não fez nenhum pagamento"
         self.__data_ultima_compra = "Cliente não fez nenhuma compra"
 

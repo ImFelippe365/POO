@@ -1,4 +1,5 @@
 from datetime import datetime
+'''Classe para dar forma aos produtos, com nome, id, preco, etc.'''
 
 
 class Produto:
@@ -8,9 +9,11 @@ class Produto:
     def __init__(self, id, nome, preco, data_validade, data_fabricacao, quantidade_estoque=0):
         self.__id = id
         self.__nome = nome
-        self.__preco = preco        
-        self.__data_validade = datetime.strptime(data_validade, '%d/%m/%Y').date()
-        self.__data_fabricacao = datetime.strptime(data_fabricacao, '%d/%m/%Y').date()
+        self.__preco = preco
+        self.__data_validade = datetime.strptime(
+            data_validade, '%d/%m/%Y').date()
+        self.__data_fabricacao = datetime.strptime(
+            data_fabricacao, '%d/%m/%Y').date()
         self.__quantidade_estoque = quantidade_estoque
 
     """Metodo para facilitar e organizar exibição dos dados"""
@@ -55,4 +58,3 @@ class Produto:
 
     def set_quantidade_estoque(self, quantidade_estoque):
         self.__quantidade_estoque = quantidade_estoque
-
